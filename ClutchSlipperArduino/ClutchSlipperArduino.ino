@@ -1,14 +1,23 @@
+#include "Arduino.h"
+#include <SoftwareSerial.h>
+const byte rxPin = 9;
+const byte txPin = 8;
+SoftwareSerial BTSerual(rxPin, txPin); // RX TX
 int led_pin = 13;
 const int buttonPin =2;
 boolean buttonState = LOW; // Clutch Switch State Init
 boolean laststate = HIGH; // last state Init
-ReleaseDelay = 0; //Release Delay Init
-HoldDelay = 0; //Hold Delay Init
+unsigned long ReleaseDelay = 0; //Release Delay Init
+unsigned long HoldDelay = 0; //Hold Delay Init
 
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600); //Universal Baud Rate
+
+  pinMode(rxPin, INPUT);
+  pinMode(txPin, OUTPUT);
+  BTserial.begin(9600);
 
   pinMode(7, OUTPUT); // Output pin to solenoid
   pinMode(2, INPUT);  // Clutch switch input pin
@@ -18,9 +27,9 @@ void setup() {
 
 void LAUNCH()
 {
-  delay(500);            //Initial delay for clutch pedal position... Needs to be an input from my iPhone App
+  delay(ReleaseDelay);   //Initial delay for clutch pedal position... Needs to be an input from my iPhone App
   digitalWrite(7, HIGH); // Enables line lock solenoid
-  delay(800);            // HOLD time for clutch and solenoid... Needs to be an input from my iPhone App
+  delay(HoldDelay);      // HOLD time for clutch and solenoid... Needs to be an input from my iPhone App
   digitalWrite(7, LOW);  //Deavtivate linelock solenoid
 }
 
