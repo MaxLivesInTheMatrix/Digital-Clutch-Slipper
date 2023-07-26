@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505571472A70CD4E009D6E44 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505571462A70CD4E009D6E44 /* CoreBluetooth.framework */; };
 		50BB12C82A6F193000E427E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB12C72A6F193000E427E8 /* AppDelegate.swift */; };
 		50BB12CA2A6F193000E427E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB12C92A6F193000E427E8 /* SceneDelegate.swift */; };
 		50BB12CC2A6F193000E427E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB12CB2A6F193000E427E8 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		505571462A70CD4E009D6E44 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		50BB12C42A6F193000E427E8 /* ClutchSlipperSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClutchSlipperSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50BB12C72A6F193000E427E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50BB12C92A6F193000E427E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +33,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505571472A70CD4E009D6E44 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		505571452A70CD4E009D6E44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				505571462A70CD4E009D6E44 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		50BB12BB2A6F193000E427E8 = {
 			isa = PBXGroup;
 			children = (
 				50BB12C62A6F193000E427E8 /* ClutchSlipperSB */,
 				50BB12C52A6F193000E427E8 /* Products */,
+				505571452A70CD4E009D6E44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
