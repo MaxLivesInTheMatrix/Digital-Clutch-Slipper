@@ -2,13 +2,13 @@
 #include <SoftwareSerial.h>
 const byte rxPin = 9;
 const byte txPin = 8;
-SoftwareSerial BTSerual(rxPin, txPin); // RX TX
+SoftwareSerial BTSerial(rxPin, txPin); // RX TX
 int led_pin = 13;
 const int buttonPin =2;
 boolean buttonState = LOW; // Clutch Switch State Init
 boolean laststate = HIGH; // last state Init
-unsigned long ReleaseDelay = 0; //Release Delay Init
-unsigned long HoldDelay = 0; //Hold Delay Init
+unsigned long ReleaseDelay = 500; //Release Delay Init
+unsigned long HoldDelay = 500; //Hold Delay Init
 
 
 void setup() {
@@ -17,11 +17,14 @@ void setup() {
 
   pinMode(rxPin, INPUT);
   pinMode(txPin, OUTPUT);
-  BTserial.begin(9600);
+  BTSerial.begin(9600);
 
   pinMode(7, OUTPUT); // Output pin to solenoid
   pinMode(2, INPUT);  // Clutch switch input pin
   pinMode(4, INPUT);  // Launch mode ON/OFF signal TO BE REPLACED BY IOS APP ON/OFF BUTTON
+
+  digitalWrite(2, HIGH); //Turn on pullup resistors
+  digitalWrite(4, HIGH); //Turn on pullup resistors
 
 }
 
