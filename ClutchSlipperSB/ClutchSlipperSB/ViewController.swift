@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var ClutchHoldTime: UITextField!
     @IBOutlet weak var OutputWindow: UITextView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         InitialClutchDelay.delegate = self
@@ -24,7 +26,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func ENABLELAUNCH(_ sender: Any) {
+
         OutputWindow.text = "Initial Delay: \(InitialClutchDelay.text!)\nClutch Hold: \(ClutchHoldTime.text!)"
+
 
         // Fade in to red color over 1 second
         UIView.animate(withDuration: 1.0, animations: {
