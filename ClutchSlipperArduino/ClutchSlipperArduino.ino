@@ -12,8 +12,7 @@ int clutchDelay = 0;            // The clutch enable delay
 int holdDelay = 0;              // The clutch hold delay
 int armDisarm = 0;              // The ARM/Disarm switch
 
-int led_pin = 13;               // For debugging
-const int buttonPin =2;
+const int buttonPin =4;
 boolean buttonState = LOW;      // Clutch Switch State Init
 boolean laststate = HIGH;       // last state Init
 
@@ -24,16 +23,21 @@ void setup() {
   Serial.begin(9600); //Universal Baud Rate
   HM10.begin(9600);   // set HM10 serial at 9600 baud rate
   pinMode(7, OUTPUT); // Output pin to solenoid
-  pinMode(2, INPUT);  // Clutch switch input pin
-  digitalWrite(2, HIGH); //Turn on pullup resistors
+  pinMode(4, INPUT);  // Clutch switch input pin
+  digitalWrite(4, HIGH); //Turn on pullup resistors
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void LAUNCH()
 {
   delay(clutchDelay);         //Initial delay for clutch pedal position... Needs to be an input from my iPhone App
+  digitalWrite(LED_BUILTIN, HIGH);
   digitalWrite(7, HIGH);      // Enables line lock solenoid
   delay(holdDelay);           // HOLD time for clutch and solenoid... Needs to be an input from my iPhone App
+  digitalWrite(LED_BUILTIN, LOW);
   digitalWrite(7, LOW);       //Deavtivate linelock solenoid
+  armDisarm = 0;              // Launch is complete, disable until user reenables via app
+  Serial.println("Launch Complete");
 }
 
 void loop() {
@@ -53,7 +57,7 @@ void loop() {
 
 
   // put your main code here, to run repeatedly:
-  buttonState = digitalRead(2); // Check to see if clutch is pressed down all the way, this is hardware
+  buttonState = digitalRead(4); // Check to see if clutch is pressed down all the way, this is hardware
   if(buttonState != laststate && armDisarm == 1) //if this is a new launch AND launch mode is active, Essentially: is the clutch pedal depressed and launch mode active/we are armed?
   {
    if (buttonState == HIGH) //Detects the moment the clutch is released from the ground. ie. State Change
