@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506517CD2BE731890057CBD8 /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506517CC2BE731880057CBD8 /* BluetoothSerial.swift */; };
+		5067DDC52BEAB9530041092B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5067DDC42BEAB9530041092B /* MBProgressHUD.m */; };
 		50BB12C82A6F193000E427E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB12C72A6F193000E427E8 /* AppDelegate.swift */; };
 		50BB12CA2A6F193000E427E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB12C92A6F193000E427E8 /* SceneDelegate.swift */; };
 		50BB12CC2A6F193000E427E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB12CB2A6F193000E427E8 /* ViewController.swift */; };
 		50BB12CF2A6F193000E427E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BB12CD2A6F193000E427E8 /* Main.storyboard */; };
 		50BB12D12A6F193100E427E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50BB12D02A6F193100E427E8 /* Assets.xcassets */; };
 		50BB12D42A6F193100E427E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BB12D22A6F193100E427E8 /* LaunchScreen.storyboard */; };
+		50E2FA992BEAB37C0052085C /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2FA982BEAB37C0052085C /* ScannerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		506517CC2BE731880057CBD8 /* BluetoothSerial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
+		5067DDC22BEAB9520041092B /* ClutchSlipperSB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClutchSlipperSB-Bridging-Header.h"; sourceTree = "<group>"; };
+		5067DDC32BEAB9530041092B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		5067DDC42BEAB9530041092B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		50BB12C42A6F193000E427E8 /* ClutchSlipperSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClutchSlipperSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50BB12C72A6F193000E427E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50BB12C92A6F193000E427E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +31,7 @@
 		50BB12D02A6F193100E427E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50BB12D32A6F193100E427E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50BB12D52A6F193100E427E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50E2FA982BEAB37C0052085C /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +64,18 @@
 		50BB12C62A6F193000E427E8 /* ClutchSlipperSB */ = {
 			isa = PBXGroup;
 			children = (
+				50E2FA982BEAB37C0052085C /* ScannerViewController.swift */,
 				50BB12C72A6F193000E427E8 /* AppDelegate.swift */,
 				50BB12C92A6F193000E427E8 /* SceneDelegate.swift */,
 				50BB12CB2A6F193000E427E8 /* ViewController.swift */,
+				506517CC2BE731880057CBD8 /* BluetoothSerial.swift */,
+				5067DDC32BEAB9530041092B /* MBProgressHUD.h */,
+				5067DDC42BEAB9530041092B /* MBProgressHUD.m */,
 				50BB12CD2A6F193000E427E8 /* Main.storyboard */,
 				50BB12D02A6F193100E427E8 /* Assets.xcassets */,
 				50BB12D22A6F193100E427E8 /* LaunchScreen.storyboard */,
 				50BB12D52A6F193100E427E8 /* Info.plist */,
+				5067DDC22BEAB9520041092B /* ClutchSlipperSB-Bridging-Header.h */,
 			);
 			path = ClutchSlipperSB;
 			sourceTree = "<group>";
@@ -99,6 +112,7 @@
 				TargetAttributes = {
 					50BB12C32A6F193000E427E8 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1530;
 					};
 				};
 			};
@@ -139,7 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				50BB12CC2A6F193000E427E8 /* ViewController.swift in Sources */,
+				5067DDC52BEAB9530041092B /* MBProgressHUD.m in Sources */,
 				50BB12C82A6F193000E427E8 /* AppDelegate.swift in Sources */,
+				506517CD2BE731890057CBD8 /* BluetoothSerial.swift in Sources */,
+				50E2FA992BEAB37C0052085C /* ScannerViewController.swift in Sources */,
 				50BB12CA2A6F193000E427E8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +302,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CYL7GP52KT;
@@ -303,6 +321,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClutchSlipperSB.ClutchSlipperSB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ClutchSlipperSB/ClutchSlipperSB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,6 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CYL7GP52KT;
@@ -331,6 +352,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClutchSlipperSB.ClutchSlipperSB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ClutchSlipperSB/ClutchSlipperSB-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

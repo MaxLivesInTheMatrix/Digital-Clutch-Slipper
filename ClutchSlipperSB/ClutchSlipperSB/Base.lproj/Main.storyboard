@@ -66,6 +66,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaW-kD-ywv">
+                                <rect key="frame" x="111" y="77" width="168" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Connect To Device"/>
+                                <connections>
+                                    <segue destination="Ten-rD-l2u" kind="presentation" id="PvV-ec-MKY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,14 +87,17 @@
                             <constraint firstItem="BsK-pg-qyB" firstAttribute="top" secondItem="JBZ-fN-MRH" secondAttribute="bottom" constant="90" id="bnK-4W-ewU"/>
                             <constraint firstItem="RRb-dv-reb" firstAttribute="top" secondItem="F6b-Es-3nS" secondAttribute="bottom" constant="50" id="cTJ-Qm-vRJ"/>
                             <constraint firstItem="JBZ-fN-MRH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d97-DX-2Qm"/>
+                            <constraint firstItem="KaW-kD-ywv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dac-Md-Pt8"/>
                             <constraint firstItem="BsK-pg-qyB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mbV-CZ-O2k"/>
                             <constraint firstItem="olE-Gr-WJP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pfj-nE-0Iz"/>
+                            <constraint firstItem="KaW-kD-ywv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="vft-r8-N9V"/>
                             <constraint firstItem="F6b-Es-3nS" firstAttribute="top" secondItem="eDR-5I-sup" secondAttribute="bottom" constant="20" id="yhC-Ax-Wnh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ClutchHoldLabel" destination="RRb-dv-reb" id="4q3-XM-LYH"/>
                         <outlet property="ClutchHoldTime" destination="olE-Gr-WJP" id="bqL-WT-Lsn"/>
+                        <outlet property="ConnectDevice" destination="KaW-kD-ywv" id="GNE-HL-hBq"/>
                         <outlet property="InitialClutchDelay" destination="F6b-Es-3nS" id="Ylx-aa-KSU"/>
                         <outlet property="InitialDelayLabel" destination="eDR-5I-sup" id="rds-Gx-mn5"/>
                         <outlet property="OutputWindow" destination="BsK-pg-qyB" id="jM2-Tf-rCE"/>
@@ -94,12 +105,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.564885496183201" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="-195" y="21"/>
+        </scene>
+        <!--Scanning...-->
+        <scene sceneID="U0J-a5-qcl">
+            <objects>
+                <tableViewController id="pfC-zA-3ct" customClass="ScannerViewController" customModule="ClutchSlipperSB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="MBq-Qp-46l">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="tUX-ui-AkE" userLabel="Cell">
+                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tUX-ui-AkE" id="DCv-et-DTW">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Object" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uw-4t-7nA">
+                                            <rect key="frame" x="35" y="11.333333333333336" width="129" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlQ-Ez-9yU">
+                                            <rect key="frame" x="290" y="11.333333333333336" width="65" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="linkColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8Uw-4t-7nA" firstAttribute="leading" secondItem="DCv-et-DTW" secondAttribute="leading" constant="35" id="6Kc-y6-UDT"/>
+                                        <constraint firstAttribute="trailing" secondItem="rlQ-Ez-9yU" secondAttribute="trailing" constant="35" id="6ff-Hh-clC"/>
+                                        <constraint firstItem="rlQ-Ez-9yU" firstAttribute="centerY" secondItem="DCv-et-DTW" secondAttribute="centerY" id="KvP-dS-atr"/>
+                                        <constraint firstItem="8Uw-4t-7nA" firstAttribute="centerY" secondItem="DCv-et-DTW" secondAttribute="centerY" id="d1W-df-S7E"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pfC-zA-3ct" id="2vM-h4-fsi"/>
+                            <outlet property="delegate" destination="pfC-zA-3ct" id="NdM-Rg-A2j"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Scanning..." id="diP-3B-ocb">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="B1u-qW-9kU">
+                            <connections>
+                                <action selector="cancel:" destination="pfC-zA-3ct" id="krj-nB-Cpf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Try again" id="TNa-FC-sNj">
+                            <connections>
+                                <action selector="tryAgain:" destination="pfC-zA-3ct" id="6fc-Bb-Jfz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="MBq-Qp-46l" id="BwR-iL-dsO"/>
+                        <outlet property="tryAgainButton" destination="TNa-FC-sNj" id="j4L-sp-evF"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTf-UZ-2ql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1790" y="21"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P9Y-WQ-pE0">
+            <objects>
+                <navigationController id="Ten-rD-l2u" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZrF-pt-jr1"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dn5-6c-O67">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pfC-zA-3ct" kind="relationship" relationship="rootViewController" id="kpZ-Sf-kAt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N6S-Lm-xbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883" y="21"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -26,6 +26,8 @@ void setup() {
   pinMode(4, INPUT);  // Clutch switch input pin
   digitalWrite(4, HIGH); //Turn on pullup resistors
   pinMode(LED_BUILTIN, OUTPUT);
+  Serial.println("Connected");
+
 }
 
 void LAUNCH()
